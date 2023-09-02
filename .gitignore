@@ -8,3 +8,4 @@
 # other
 .env
 /certs
+.DS_Store
