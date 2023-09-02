@@ -1,0 +1,66 @@
+{
+  "name": "auth-server",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "license": "MIT",
+  "config": {
+    "prefix": "./"
+  },
+  "publishConfig": {
+    "prefix": "./"
+  },
+  "scripts": {
+    "ts-node": "ts-node",
+    "execute": "node dist/index.js",
+    "serve": "tsc && node dist/index.js",
+    "build": "tsc",
+    "watch": "tsc-watch --silent --onSuccess \"node dist/index.js\"",
+    "start": "source .env && tsc && tsc-watch --silent --onSuccess \"npm run serve\"",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/bcrypt-nodejs": "^0.0.31",
+    "@types/cassandra-driver": "^4.2.0",
+    "@types/connect-ensure-login": "^0.1.5",
+    "@types/connect-pg-simple": "^7.0.0",
+    "@types/express-session": "^1.17.3",
+    "@types/follow-redirects": "^1.13.0",
+    "@types/passport": "^1.0.12",
+    "@types/passport-facebook": "^2.1.11",
+    "@types/passport-google-oauth20": "^2.0.11",
+    "@types/passport-local": "^1.0.35",
+    "@types/pg": "^8.10.2",
+    "@types/winston": "^2.4.4",
+    "aws-sdk": "^2.884.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "cassandra-driver": "^4.6.4",
+    "cassandra-store": "^5.0.0",
+    "connect-pg-simple": "^9.0.0",
+    "cookie-parser": "^1.4.5",
+    "ethers": "^6.3.0",
+    "express": "4.17.1",
+    "express-session": "^1.17.1",
+    "follow-redirects": "^1.13.3",
+    "jdenticon": "^3.1.0",
+    "log4js": "^6.3.0",
+    "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.11.3",
+    "solarwind-common": "0.0.18",
+    "web3": "^1.10.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/cassandra-store": "^5.0.3",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "nodemon": "^2.0.7",
+    "patch-package": "^6.5.1",
+    "ts-node": "^9.1.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.0.4"
+  }
+}
