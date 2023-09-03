@@ -7,5 +7,5 @@
 
 # other
 .env
-/certs
+/deployment/certs
 .DS_Store

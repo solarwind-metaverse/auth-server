@@ -1,10 +1,9 @@
 #!/bin/bash
 source .env
 
-npm run build
-
+cd deployment
 DEPLOYMENT_FILE="kubernetes/deployment.yml"
-PACKAGE_NAME=$(jq -r '.name' < package.json)
+PACKAGE_NAME=$(jq -r '.name' < ../package.json)
 echo "Package name is $PACKAGE_NAME"
 CURRENT_VERSION=$(awk -F 'image: vhalme/|:x86' '/image: vhalme/{sub(/^_/, "", $3); print $3}' "$DEPLOYMENT_FILE")
 echo "Current version is $CURRENT_VERSION"
@@ -26,3 +25,4 @@ if [ $? -eq 0 ]; then
   echo "Updated image version from x86_$CURRENT_VERSION to x86_$NEW_VERSION in $DEPLOYMENT_FILE."
   envsubst < "$DEPLOYMENT_FILE" | kubectl apply -f -
 fi
+cd ..
