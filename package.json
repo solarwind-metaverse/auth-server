@@ -10,12 +10,10 @@
     "prefix": "./"
   },
   "scripts": {
-    "ts-node": "ts-node",
-    "execute": "node dist/index.js",
-    "serve": "tsc && node dist/index.js",
-    "build": "tsc",
-    "watch": "tsc-watch --silent --onSuccess \"node dist/index.js\"",
-    "start": "source .env && tsc && tsc-watch --silent --onSuccess \"npm run serve\"",
+    "execute": "bun run --watch src/index.ts",
+    "serve": "bun run --watch src/index.ts",
+    "watch": "bun run --watch src/index.ts",
+    "start": "source .env && bun run --watch src/index.ts",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -31,14 +29,16 @@
     "@types/passport-google-oauth20": "^2.0.11",
     "@types/passport-local": "^1.0.35",
     "@types/pg": "^8.10.2",
+    "@types/web3": "^1.2.2",
     "@types/winston": "^2.4.4",
     "aws-sdk": "^2.884.0",
     "bcrypt-nodejs": "^0.0.3",
+    "bun-types": "^1.0.5-canary.20231006T140143",
     "cassandra-driver": "^4.6.4",
     "cassandra-store": "^5.0.0",
     "connect-pg-simple": "^9.0.0",
     "cookie-parser": "^1.4.5",
-    "ethers": "^6.3.0",
+    "ethers": "^6.7.1",
     "express": "4.17.1",
     "express-session": "^1.17.1",
     "follow-redirects": "^1.13.3",
@@ -50,17 +50,13 @@
     "passport-local": "^1.0.0",
     "pg": "^8.11.3",
     "solarwind-common": "0.0.18",
-    "web3": "^1.10.0",
+    "web3": "^4.1.2",
     "winston": "^3.8.2"
   },
   "devDependencies": {
     "@types/cassandra-store": "^5.0.3",
     "@types/express": "^4.17.11",
-    "@types/node": "^14.14.37",
-    "nodemon": "^2.0.7",
     "patch-package": "^6.5.1",
-    "ts-node": "^9.1.1",
-    "tsc-watch": "^6.0.4",
     "typescript": "^5.0.4"
   }
 }

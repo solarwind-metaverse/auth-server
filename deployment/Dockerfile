@@ -1,5 +1,5 @@
 # Base image
-FROM vhalme/solarwind-nodejs-server
+FROM vhalme/solarwind-bun-server
 
 # Set working directory
 WORKDIR /app
@@ -8,11 +8,9 @@ WORKDIR /app
 RUN git clone https://github.com/solarwind-metaverse/auth-server.git
 
 WORKDIR /app/auth-server
-# Install app dependencies
-RUN npm install
 
-# Build app
-RUN npm run build
+# Install app dependencies
+RUN bun install
 
 RUN mkdir -p /app/pg/ssl
 COPY certs /app/pg/ssl/certs
