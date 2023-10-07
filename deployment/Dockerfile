@@ -19,4 +19,4 @@ COPY certs /app/pg/ssl/certs
 EXPOSE 3003
 
 # Start the app
-CMD [ "npm", "run", "serve" ]
+CMD [ "bun", "run", "serve" ]
